@@ -1,0 +1,26 @@
+/******************************************************************************
+
+Elabore um algoritmo para identificar se um número inteiro fornecido pelo usuário é positivo ou negativo
+(considere zero como positivo).
+Casos de teste:
+a) Para o número 5, será apresentada a mensagem “Positivo”;
+b) Para o número -5, será apresentada a mensagem “Negativo”;
+c) Para o número 0 (zero), será apresentada a mensagem “Positivo”. 
+
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int num = 0;
+    
+    printf("Digite um número para saber se ele é Positivo ou Negativo:");
+    scanf("%d", &num);
+    
+    if(num >= 0)
+    printf("\nPositivo");
+    
+    if(num < 0)
+    printf("\nNegativo");
+}
