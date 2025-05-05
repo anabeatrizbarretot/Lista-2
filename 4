@@ -1,0 +1,43 @@
+/******************************************************************************
+
+Elabore um algoritmo para obter dois números do usuário e identificar o maior e o menor ou se são iguais.
+Observação: a saída deve ser formatada.
+Casos de teste:
+a) Para os números 5 e 8, a saída deve ser a seguinte:
+Maior: 8
+Menor: 5
+b) Para os números 9 e 1, a saída deve ser a seguinte:
+Maior: 9
+Menor: 1
+c) Para os números 3 e 3, a saída deve ser a seguinte:
+Iguais: 3 
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int a = 0, b = 0;
+
+    printf("Digite o valor de A: ");
+    scanf("%d", &a);
+
+    printf("Digite o valor de B: ");
+    scanf("%d", &b);
+
+    if (a > b) {
+        printf("\nMaior: %d", a);
+        printf("\nMenor: %d", b);
+    }
+
+    if (a < b) {
+        printf("\nMaior: %d", b);
+        printf("\nMenor: %d", a);
+    }
+
+    if (a == b) {
+        printf("\nIguais: %d", a);
+    }
+
+    return 0;
+}
