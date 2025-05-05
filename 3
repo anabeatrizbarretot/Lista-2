@@ -1,0 +1,36 @@
+/******************************************************************************
+
+Dados três valores (A, B e C), faça um algoritmo para verificar se podem ser os comprimentos dos lados
+de um triângulo; exibir a mensagem “É um triângulo” ou a mensagem “Não é um triângulo”. Utilize a
+seguinte propriedade: o comprimento de cada lado de um triângulo é menor do que a soma dos
+comprimentos dos outros dois lados.
+Casos de teste:
+a) Para os valores 5, 7 e 10, será apresentada a mensagem “É um triângulo”;
+b) Para os valores 20, 10 e 5, será apresentada a mensagem “Não é um triângulo”. 
+
+
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int a = 0, b = 0, c = 0;
+    
+    printf("Digite o valor do lado A:");
+    scanf("%d", &a);
+    
+    printf("Digite o valor do lado B:");
+    scanf("%d", &b);
+    
+    printf("Digite o valor do lado C:");
+    scanf("%d", &c);
+    
+    
+    if ((a < b + c) && (b < a + c) && (c < a + b)) 
+        printf("\nÉ um triângulo\n");
+    
+    if(!(a < b + c) && (b < a + c) && (c < a + b))
+    printf("\nNão é um triângulo");
+    
+}
