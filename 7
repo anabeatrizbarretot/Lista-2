@@ -1,0 +1,31 @@
+/******************************************************************************
+Faça um algoritmo para obter dois números inteiros diferentes e exibir os números em ordem crescente
+(do menor para o maior).
+Casos de teste:
+a) Para os números 9 e 5, serão apresentados os números 5 e 9 (nessa ordem);
+b) Para os números 10 e 20, serão apresentados os números 10 e 20 (nessa ordem)
+
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int a = 0, b = 0;
+    
+
+    printf("Digite um valor: ");
+    scanf("%d", &a);
+
+    printf("Digite um valor: ");
+    scanf("%d", &b);
+
+    if (a > b) { 
+        printf("\n %d e %d", b, a);
+    }
+    else{
+        printf("\n %d e %d", a, b);
+    }
+
+    return 0;
+}
