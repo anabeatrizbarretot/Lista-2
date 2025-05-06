@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    char tipocargo;
+    float salario = 0.0, bonus = 0.0;
+
+    // Entrada de dados pelo usuário
+    printf("Digite o tipo de cargo (A ou B): ");
+    scanf(" %c", &tipocargo);
+    
+    // Verifica se o tipo de cargo é válido
+    if (tipocargo == 'A' || tipocargo == 'a' || tipocargo == 'B' || tipocargo == 'b') {
+        
+        // valor do salario informado pelo usuário
+        printf("Digite o salário do funcionário: R$ ");
+        scanf("%f", &salario);
+
+        // Estrutura condicional encadeada 
+        if (tipocargo == 'A' || tipocargo == 'a') { // cargo tipo A
+            if (salario <= 1000) {
+                bonus = 500;
+            } else if (salario <= 2500) {
+                bonus = 250;
+            } else if (salario <= 5000) {
+                bonus = 100;
+            } else {
+                bonus = 50;
+            }
+        } else if (tipocargo == 'B' || tipocargo == 'b') { // CARGO TIPO B
+            if (salario <= 2000) {
+                bonus = 500;
+            } else if (salario <= 5000) {
+                bonus = 200;
+            } else {
+                bonus = 100;
+            }
+        }
+
+        // Saída para o usuário
+        printf("O bônus para o funcionário é de R$ %.2f\n", bonus);
+
+    } else {
+        // Caso o tipo de cargo seja inválido
+        printf("Tipo de cargo inválido.\n");
+    }
+
+    return 0;
+}
