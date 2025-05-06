@@ -1,0 +1,46 @@
+/******************************************************************************
+
+Faça um algoritmo para obter um valor qualquer e depois perguntar ao usuário se este valor está em
+dólares ou em reais e fazer o seguinte:
+
++ Caso a escolha do usuário for dólares, converter o valor para reais;
++ Caso a escolha do usuário for reais, converter o valor para dólares.
+
+Observação: O algoritmo deve solicitar ao usuário a cotação atual do dólar.
+Casos de teste:
+a) Para o valor de 100 em dólares, com a cotação do dólar em 5,20 reais, o valor em reais é 520 reais;
+b) Para o valor de 100 em reais, com a cotação do dólar em 5,20 reais, o valor em dólar é 19,23 dólares
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    float valor = 0, cotacao = 0, convertido = 0;
+    int tipo = 0;
+
+    printf("Digite um valor: ");
+    scanf("%f", &valor);
+
+    printf("O valor está em:\n1 - Dólares\n2 - Reais\nEscolha (1 ou 2): ");
+    scanf("%d", &tipo);
+
+    printf("Digite a cotação atual do dólar (ex: 5.20): ");
+    scanf("%f", &cotacao);
+
+    if (tipo == 1) {
+        convertido = valor * cotacao;
+        printf("Valor em reais: R$ %.2f\n", convertido);
+    }
+
+    if (tipo == 2) {
+        convertido = valor / cotacao;
+        printf("Valor em dólares: US$ %.2f\n", convertido);
+    }
+
+    if (tipo != 1 && tipo != 2) {
+        printf("Opção inválida.\n");
+    }
+
+    return 0;
+}
