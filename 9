@@ -1,0 +1,47 @@
+/******************************************************************************
+Dados três valores (A, B e C), elabore um algoritmo para verificar se podem ser os comprimentos dos lados
+de um triângulo e, caso afirmativo, verificar se é um triângulo equilátero, isósceles ou escaleno
+ Definição 1: Um triângulo é equilátero quando os comprimentos de seus três lados são iguais;
+ Definição 2: Um triângulo é isósceles quando os comprimentos de dois dos seus lados são iguais
+(portanto, todo triângulo equilátero é também isósceles);
+ Definição 3: Um triângulo é escaleno quanto os comprimentos de seus três lados são diferentes.
+Casos de teste:
+a) Para os valores 10, 5 e 30, será apresentada a mensagem “Os valores não formam um triângulo”;
+b) Para os valores 10, 10 e 10, será apresentada a mensagem “Os valores formam um triângulo
+equilátero”;
+c) Para os valores 20, 20 e 30, será apresentada a mensagem “Os valores formam um triângulo isósceles”;
+d) Para os valores 15, 20 e 25, será apresentada a mensagem “Os valores formam um triângulo escaleno”. 
+
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main() {
+    int A = 0, B = 0, C = 0;
+
+    
+    printf("Digite o valor do lado triângulo A: ");
+    scanf("%d", &A);
+    
+    printf("Digite o valor do lado triângulo B : ");
+    scanf("%d", &B);
+    
+    printf("Digite o valor do lado triângulo C: ");
+    scanf("%d", &C);
+
+    
+    if ((A + B > C) && (A + C > B) && (B + C > A)) {
+       
+        if (A == B && B == C) {
+            printf("Os valores formam um triângulo equilátero.\n");
+        } else if (A == B || A == C || B == C) {
+            printf("Os valores formam um triângulo isósceles.\n");
+        } else {
+            printf("Os valores formam um triângulo escaleno.\n");
+        }
+    } else {
+        printf("Os valores não formam um triângulo.\n");
+    }
+
+    return 0;
+}
