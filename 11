@@ -1,0 +1,63 @@
+/******************************************************************************
+Faça um algoritmo para calcular o desconto do Imposto de Renda (IR) de um funcionário, solicitar o salário
+bruto e exibir na saída o salário líquido e o desconto. A alíquota do IR a ser utilizada no cálculo do desconto
+depende do salário bruto e é determinada de acordo com a seguinte tabela:
+Salário Bruto Alíquota
+Até R$ 1.900,00 Isento
+De R$ 1.900,01 até R$ 3.000,00 7,5%
+De R$ 3.000,01 até R$ 4.000,00 15%
+De R$ 4.000,01 até R$ 4.700,00 22,5%
+Acima de 4.700,00 27,5
+Casos de teste:
+a) Para o funcionário com salário bruto de R$ 1.100,00, o salário líquido é de R$ 1.100,00 e o desconto é
+de R$ 0,00;
+b) Para o funcionário com salário bruto de R$ 2.200,00, o salário líquido é de R$ 2.035,00 e o desconto é
+de R$ 165,00;
+c) Para o funcionário com salário bruto de R$ 3.300,00, o salário líquido é de R$ 2.805,00 e o desconto é
+de R$ 495,00;
+d) Para o funcionário com salário bruto de R$ 4.500,00, o salário líquido é de R$ 3847,50 e o desconto é
+de R$ 1.012,50;
+e) Para o funcionário com salário bruto de R$ 8.000,00, o salário líquido é de R$ 5.800,00 e o desconto é
+de R$ 2.200,00; 
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main() {
+    float salario = 0, liquido = 0, desconto = 0;
+
+    printf("Digite o valor do salário: R$ ");
+    scanf("%f", &salario);  
+
+    if (salario <= 1900.00) {
+        printf("Isento de desconto.\n");
+        
+    } else if (salario > 1900.00 && salario <= 3000.00) {
+        desconto = salario * 0.075;
+        liquido = salario - desconto;
+        printf("Para o salário bruto de R$ %.2f, o desconto é de R$ %.2f e o salário líquido é de R$ %.2f.\n",
+               salario, desconto, liquido);
+               
+    } else if (salario > 3000.00 && salario <= 4000.00) {
+        desconto = salario * 0.15;
+        liquido = salario - desconto;
+        printf("Para o salário bruto de R$ %.2f, o desconto é de R$ %.2f e o salário líquido é de R$ %.2f.\n",
+               salario, desconto, liquido);   
+               
+    } else if (salario > 4000.00 && salario <= 4700.00) {
+        desconto = salario * 0.225;
+        liquido = salario - desconto;
+        printf("Para o salário bruto de R$ %.2f, o desconto é de R$ %.2f e o salário líquido é de R$ %.2f.\n",
+               salario, desconto, liquido);
+               
+    } else if (salario > 4700.00) {
+        desconto = salario * 0.275;
+        liquido = salario - desconto;
+        printf("Para o salário bruto de R$ %.2f, o desconto é de R$ %.2f e o salário líquido é de R$ %.2f.\n",
+               salario, desconto, liquido);
+    } else {
+        printf("Faixa salarial não tratada neste código.\n");
+    }
+
+    return 0;
+}
