@@ -1,0 +1,51 @@
+/******************************************************************************
+Elabore um algoritmo que, para uma conta bancária, solicite o seu número, o saldo, o tipo de operação a
+ser realizada (1 para depósito ou 2 para retirada) e o valor da operação; depois, calcule e mostre o novo
+saldo e, se o novo saldo estiver negativo, mostre a mensagem “Conta com saldo negativo”.
+Casos de teste:
+a) Para a conta número 123-4, saldo de R$ 1.000,00, operação 1 (depósito) e valor de operação de
+R$ 500,50, será apresentado o saldo de R$ 1.500,50;
+b) Para a conta número 300-0, saldo de R$ 500,00, operação 2 (retirada) e valor de operação de
+R$ 500,50, será apresentado o saldo de -R$ 0,50 e a mensagem “Conta com saldo negativo”.
+c) Para a conta número 444-5, saldo de R$ 1.500,00, operação 2 (retirada) e valor de operação de
+R$ 500,00, será apresentado o saldo de R$ 1.000,00. 
+*******************************************************************************/
+#include <stdio.h>
+
+int main() {
+    char numeroConta[20];  
+    float saldo=0, valorOperacao=0, novoSaldo=0;
+    int operacao=0;
+
+   
+    printf("Digite o número da conta: ");
+    scanf("%s", numeroConta);
+
+    printf("Digite o saldo atual: R$ ");
+    scanf("%f", &saldo);
+
+    printf("Digite o tipo de operação (1 para depósito, 2 para retirada): ");
+    scanf("%d", &operacao);
+
+    printf("Digite o valor da operação: R$ ");
+    scanf("%f", &valorOperacao);
+
+    
+    if (operacao == 1) {
+        novoSaldo = saldo + valorOperacao;
+    } else if (operacao == 2) {
+        novoSaldo = saldo - valorOperacao;
+    } else {
+        printf("Operação inválida!\n");
+        return 1; 
+    }
+
+    printf("Conta %s - Novo saldo: R$ %.2f\n", numeroConta, novoSaldo);
+
+   
+    if (novoSaldo < 0) {
+        printf("Conta com saldo negativo\n");
+    }
+
+    return 0;
+}
